@@ -1,0 +1,17 @@
+RewriteEngine on
+
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-l
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^jsitem(.*)$ /index.php?toModule=$1 [L]
+
+RewriteRule ^video(.*)$ /index.php?toModule=$1 [L]
+RewriteRule ^audio(.*)$ /index.php?toModule=$1 [L]
+
+RewriteRule ^mv(.*)$ /redirect.php?address=$1 [L]
+
+
+RewriteCond %{QUERY_STRING} ajax
+RewriteRule ^ /index.php?toModule=$1 [L]
+
